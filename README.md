@@ -6,9 +6,9 @@ This was a project in my first year at leeds, it is a set of utilities for pgm f
 
 ## USAGE INSTRUCTIONS
 
-# RUN 'make' TO CREATE ALL EXECUTABLES DISPLAYED FOLLOWING
+### RUN 'make' TO CREATE ALL EXECUTABLES DISPLAYED FOLLOWING
 
-# ELSE RUN 'make <executable>' TO CREATE THE EXECUTABLE YOU WANT
+### ELSE RUN 'make <executable>' TO CREATE THE EXECUTABLE YOU WANT
 
 ./pgmEcho:
 This program coppies a given pgm file to another given pgm file
