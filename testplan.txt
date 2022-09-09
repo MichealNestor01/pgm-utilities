@@ -1,0 +1,27 @@
+===========================================================================
+NAME: Micheal Nestor
+EMAIL: sc21mpn@leeds.ac.uk
+STUDENT ID: 201492471
+===========================================================================
+This is my test plan for assignment_1
+===========================================================================
+Test Plan:
+
+All of my tests will be implemented using bash scripts in a .sh file.
+
+Error Detection Testing:
+I will test each program using pgm images that have been altered by me
+in someway such that they violate the pgm specification. The bash script
+will detect whether or not a program can detect that a pgm file does not 
+meet the specification and whether or not it returns the correct error 
+code and error message. Another type of file that will be tested are 
+non writable files, I will use chmod to remove write permisions from 
+some files, and then test to see how the programs respond to being told 
+to write to them.
+
+Functionality Testing:
+I will also test each programs functionality, whether it carries out the 
+function it was designed for correctly. An example of this kind of test 
+would be me creating a custom pgm file and then tiling it by hand, then
+using the bash script to see if pgmTile creates all of the same tiles 
+when given the correct parameters. 

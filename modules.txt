@@ -1,0 +1,105 @@
+===========================================================================
+NAME: Micheal Nestor
+EMAIL: sc21mpn@leeds.ac.uk
+STUDENT ID: 201492471
+===========================================================================
+This is my plan for the modules that will make up my solution to coursework
+=========================================================================== 
+Modules List:
+ 1.pgmReadFromFile
+ 2.pgmReader
+ 3.pgmWriteToFile
+ 4.pgmWriter
+ 5.pgmEcho
+ 6.pgmComp
+ 7.converter
+ 8.pgmA2B
+ 9.pgmB2A
+ 10.pgmReduce
+ 11.pgmTile
+ 12.pgmAssemble
+ 13.exitMessages
+ 14.roundNumber
+ 15.sqrtNumber
+ 16.checkInt
+===========================================================================
+Detailed Module Descriptions:
+
+1. pgmReadFromFile
+This is a small module that will be used by all of the core programs when 
+they want to read from a file. It takes a pgm struct and a filename.
+This will create the file pointer and then pass this pointer to pgmReader, 
+I chose to separate this module from the reader module so that the reader 
+module can take any type of stream pointer not just a file pointer.
+
+2. pgmReader
+This module takes a pgm struct and a stream pointer to (hopefully) a pgm 
+file, it will verify that this is indeed a pgm file, will find out what
+type of file it is, and populate the given struct with information
+about the pgm as well as it's image data.
+
+3. pgmWriteToFile
+This is similar to readFromFile, it takes a pgm struct and a filename, and
+creates a file pointer to that file if it is writable and exits, it then 
+passes this to pgmWriter
+
+4. pgmWriter
+This is a module that takes a pgm struct and a stream pointer and attempts
+to output the data from the pgm struct into a pgm file.
+
+5. pgmEcho
+This uses pgmReadFromFile and pgmWriteToFile to read a given input pgm, and 
+copy it to a given output pgm.
+
+6. pgmComp
+This uses pgmReadFromFile to get the data of two given pgm images and then 
+determines whether they are logically equivalent, this means whether or not
+they will create the same image, not necessarily if they have the same code.
+
+7. converter 
+Converter is used by both pgma2b and pgmb2a, it takes a filname, and a format
+and it will attempt to, if that file is not already that format, to convert
+it to that format and output it to a given output file. It will use 
+pgmReadFromFile and pgmWriteToFile to achieve this.
+
+8. pgma2b
+Very simple module that takes an input file and output file, and passes them
+to converter with character 'R' to tell converter that the input image should
+be converted to a binary (RAW) file.
+
+9. pgmb2a
+Very simple module that takes an input file and output file, and passes them
+to converter with character 'P' to tell converter that the input image should
+be converted to a ASCII (PLAIN) file.
+ 
+10. pgmReduce
+This program takes an input image, a reduction factor and an output image and
+then tries to reduce the input image by the given reduction factor, and putting
+this reduced image in the ouput file. It reduces the image by only including
+the pixles in the input image such that pixel's row % reduction factor == 0 and
+pixel's height % reduction factor == 0.
+
+11. pgmTile
+This program takes an input image, reduction factor, and output image template, 
+and splits the input image into (reduction factor)^2 output images in the given
+template format. It will emoloy an algorithm that attempts to make the output 
+tiles as evenly sized as possible.
+
+12. pgmAssemble
+This program takes an output filename, width and height, and then a number of 
+tiles which it will join together to form the output image.
+
+13. exitMessages
+This module takes an exit code, and will putput an apropriate message and then 
+return one of the standard error codes. For example it would take code 101 which
+represents a miscellaneous malloc error, print a relevant message and then return
+100 as it is a miscellaneous error.
+
+14. roundNumber
+Simple utility which will round a double to the nearest whole number. Used in tile.
+
+15. sqrtNumber 
+Simple utility which will sqrt a given square number. Used in assemble.
+
+16. checkInt
+Simple utility which will check if a given number is an integer.
