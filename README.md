@@ -44,3 +44,6 @@ RUNNING THE TEST SCRIPT
 I have implemented a test script which ensures that the files work correctly, to run this script and see if the
 tests pass, open the main directory in a terminal, and type "./testscript.sh" and click enter this will run the
 script.
+
+### Wallpaper made with pgmTile output
+![Leeds lab machine wallpaper](./wallpaper.png)
